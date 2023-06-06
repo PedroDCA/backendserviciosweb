@@ -6,11 +6,11 @@ namespace ProductionPresentationLayer.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class MaterialController : ControllerBase
+    public class WorkerController : ControllerBase
     {
         private readonly IWorkerService _workerService;
 
-        public MaterialController(IWorkerService workerService)
+        public WorkerController(IWorkerService workerService)
         {
             _workerService = workerService;
         }
