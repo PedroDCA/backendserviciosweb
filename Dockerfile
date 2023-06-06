@@ -7,14 +7,14 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["PresentationLayer/PresentationLayer.csproj", "PresentationLayer/"]
-RUN dotnet restore "PresentationLayer/PresentationLayer.csproj"
+COPY ["PresentationLayer/ProductionPresentationLayer.csproj", "PresentationLayer/"]
+RUN dotnet restore "PresentationLayer/ProductionPresentationLayer.csproj"
 COPY . .
 WORKDIR "/src/PresentationLayer"
-RUN dotnet build "PresentationLayer.csproj" -c Release -o /app/build
+RUN dotnet build "ProductionPresentationLayer.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "PresentationLayer.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "ProductionPresentationLayer.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
