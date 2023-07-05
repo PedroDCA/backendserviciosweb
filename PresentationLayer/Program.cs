@@ -1,10 +1,13 @@
-using ProductionBusinessLayer.Classes;
-using ProductionBusinessLayer.Interfaces;
+using ProductionBusinessLayer.ServiceInterfaces;
+using ProductionBusinessLayer.Services;
+using ProductionDataAccessLayer.ServiceInterfaces;
+using ProductionDataAccessLayer.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddScoped<IWorkerService, WorkerService>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+builder.Services.AddScoped<ISessionService, SessionService>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
