@@ -10,11 +10,29 @@ namespace ProductionDataAccessLayer.Classes
 {
     public class Employee
     {
+       /// <summary>
+       /// Employee's Identificator
+       /// </summary>
         public int Id { get; set; }
+        /// <summary>
+        /// Employee's name
+        /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// Employee's email
+        /// </summary>
         public string Email { get; set; }
+        /// <summary>
+        /// Employee's last name
+        /// </summary>
         public string LastName { get; set; }
+        /// <summary>
+        /// Employee's password
+        /// </summary>
         public string Password { get; set; }
+        /// <summary>
+        /// RoleId can be...
+        /// </summary>
         public int RoleId { get; set; }
         
     }

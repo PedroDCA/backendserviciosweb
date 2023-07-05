@@ -10,16 +10,22 @@ namespace ProductionBusinessLayer.Services
 {
     public class SessionService : ISessionService
     {
-        //Crear la interfaz del servicio
+        //Create the service interface
         private IEmployeeService _employeeService;
 
-        //Crear un constructor
+        //Create a constructor
+        /// <summary>
+        /// Constructor that initializes a new instance of the `SessionService` class, it allows the `SessionService` class to interact with the `employeeService` object.
+        /// </summary>
         public SessionService(IEmployeeService employeeService) 
         { 
             _employeeService = employeeService;
         }
 
-        //Funcion
+        //Create the funcion
+        /// <summary>
+        /// Method that verifies the credentials of an employee.
+        /// </summary>
         public bool AuthenticateEmployee(string email, string password)
         {
             var employee = _employeeService.GetEmployee(email, password);
