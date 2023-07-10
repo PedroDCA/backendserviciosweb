@@ -31,7 +31,7 @@ namespace ProductionDataAccessLayer.Classes
         /// </summary>
         public string Password { get; set; }
         /// <summary>
-        /// RoleId can be...
+        /// Employee's Role: 1 is adminitrator, 2 is ebanista, 3 is painter, 4 is tapizador, 5 is designer
         /// </summary>
         public int RoleId { get; set; }
         
