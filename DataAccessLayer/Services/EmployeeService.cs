@@ -40,7 +40,7 @@ namespace ProductionDataAccessLayer.Services
         /// <param name="password"></param>
         /// <param name="roleId"></param>
         /// <returns></returns>
-        public Employee PostEmployee(string name, string email, string password, int roleId)
+        public Employee CreateEmployee(string name, string email, string password, int roleId)
         {
             var employee = new Employee()
             {
