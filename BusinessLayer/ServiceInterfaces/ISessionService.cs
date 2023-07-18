@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProductionDataAccessLayer.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,8 +13,21 @@ namespace ProductionBusinessLayer.ServiceInterfaces
     public interface ISessionService
     {
         /// <summary>
-        ///  Method that takes in an email and password as parameters and returns a boolean value indicating whether the employee is successfully authenticated or not.
+        /// Authenticates an Employee by verifying the provided email and password.
         /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         bool AuthenticateEmployee(string email, string password);
+
+        /// <summary>
+        /// Method declaration for registering a new Employee with specified details and role.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <param name="roleId"></param>
+        /// <returns></returns>
+        Employee RegisterEmployee(string name, string email, string password, int roleId);
     }
 }

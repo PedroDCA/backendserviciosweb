@@ -14,8 +14,11 @@ namespace ProductionDataAccessLayer.Services
     public class EmployeeService : IEmployeeService
     {
         /// <summary>
-        /// This method returns an instance of the Employee class with predefined values for demonstration purposes. 
+        /// This method returns an instance of the Employee class
         /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public Employee GetEmployee (string email, string password)
         {
             var employee = new Employee()
@@ -24,6 +27,29 @@ namespace ProductionDataAccessLayer.Services
                 Id = 1,
                 Email = "pedrito@gmail.com",
                 Password = "pedrito",
+            };
+
+            return employee;
+        }
+
+        /// <summary>
+        /// This method creates a new Employee record with default values and returns it. 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <param name="roleId"></param>
+        /// <returns></returns>
+        public Employee PostEmployee(string name, string email, string password, int roleId)
+        {
+            var employee = new Employee()
+            {
+                //MISSING: Aqui va la conexion a la BD
+                Id = 1,
+                Name = " ",
+                Email = " ",
+                Password = " ",
+                RoleId = 1,
             };
 
             return employee;

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProductionBusinessLayer.ServiceInterfaces;
+using ProductionBusinessLayer.Services;
 using ProductionPresentationLayer.HttpRequest;
 using ProductionPresentationLayer.HttpResponse;
 using static System.Net.WebRequestMethods;
@@ -23,7 +24,6 @@ namespace ProductionPresentationLayer.Controllers
 
         // HTTP POST action to authenticate an employee
         [HttpPost("Login")]
-
         public LoginResponse AuthenticateEmployee([FromBody] LoginRequest loginRequest)
         {
             //Authenticate the employee using the ISessionService
@@ -38,5 +38,30 @@ namespace ProductionPresentationLayer.Controllers
             // Return the LoginResponse as the HTTP response
             return loginResponse;
         }
+
+        // HTTP POST action to register an employee
+        [HttpPost("Registration")]
+        public RegistrationResponse HandleRegistrationRequest([FromBody] RegistrationRequest request)
+        {
+            // Extract registration data from the HTTP request
+            string name = request.Name;
+            string email = request.Email;
+            string password = request.Password;
+
+            // Call the registration service to register the employee
+            var newEmployee = _sessionService.RegisterEmployee(name, email, password, 1);
+
+            // Generate an HTTP response indicating successful registration
+            RegistrationResponse response = new RegistrationResponse
+            {
+                Message = "Registration successful",
+                EmployeeId = newEmployee.Id,
+            };
+
+            return response;
+
+        }
     }
+
+
 }
