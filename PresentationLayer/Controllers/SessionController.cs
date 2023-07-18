@@ -45,11 +45,12 @@ namespace ProductionPresentationLayer.Controllers
         {
             // Extract registration data from the HTTP request
             string name = request.Name;
+            string lastName = request.lastName;
             string email = request.Email;
             string password = request.Password;
 
             // Call the registration service to register the employee
-            var newEmployee = _sessionService.RegisterEmployee(name, email, password, 1);
+            var newEmployee = _sessionService.RegisterEmployee(name, lastName, email, password, 1);
 
             // Generate an HTTP response indicating successful registration
             RegistrationResponse response = new RegistrationResponse

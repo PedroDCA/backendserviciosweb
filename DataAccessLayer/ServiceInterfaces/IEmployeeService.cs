@@ -15,19 +15,20 @@ namespace ProductionDataAccessLayer.ServiceInterfaces
         /// <summary>
         /// Method that takes in an email and password as parameters and returns an instance of the `Employee` class.
         /// </summary>
-        /// <param name="email"></param>
-        /// <param name="password"></param>
+        /// <param name="email">Employee's email</param>
+        /// <param name="password">Employee's password</param>
         /// <returns></returns>
         Employee GetEmployee(string email, string password);
 
         /// <summary>
         /// Creates a new Employee record in the system with the provided details.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="email"></param>
-        /// <param name="password"></param>
-        /// <param name="roleId"></param>
+        /// <param name="name">Employee's name</param>
+        /// <param name="lastName">Employee's last name</param>
+        /// <param name="email">Employee's email</param>
+        /// <param name="password">Employee's password</param>
+        /// <param name="roleId">Employee's Role: 1 is adminitrator, 2 is ebanista, 3 is painter, 4 is tapizador, 5 is designer</param>
         /// <returns></returns>
-        Employee PostEmployee(string name, string email, string password, int roleId);
+        Employee CreateEmployee(string name, string lastName, string email, string password, int roleId);
     }
 }

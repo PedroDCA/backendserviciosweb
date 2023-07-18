@@ -19,13 +19,15 @@ namespace ProductionDataAccessLayer.Classes
         /// </summary>
         public string Name { get; set; }
         /// <summary>
-        /// Employee's email
-        /// </summary>
-        public string Email { get; set; }
-        /// <summary>
         /// Employee's last name
         /// </summary>
         public string LastName { get; set; }
+        /// <summary>
+        /// Employee's email
+        /// </summary>
+        /// 
+        public string Email { get; set; }
+        
         /// <summary>
         /// Employee's password
         /// </summary>

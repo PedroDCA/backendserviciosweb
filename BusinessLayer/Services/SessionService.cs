@@ -41,13 +41,14 @@ namespace ProductionBusinessLayer.Services
         /// Registers a new Employee by calling the PostEmployee method from the EmployeeService.
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="lastName">Employee's last name</param>
         /// <param name="email"></param>
         /// <param name="password"></param>
         /// <param name="roleId"></param>
         /// <returns></returns>
-        public Employee RegisterEmployee(string name, string email, string password, int roleId)
+        public Employee RegisterEmployee(string name, string lastName, string email, string password, int roleId)
         {
-            var employee = _employeeService.PostEmployee(name, email, password, roleId);
+            var employee = _employeeService.CreateEmployee(name, lastName, email, password, roleId);
             return employee;
         }
 
