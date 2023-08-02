@@ -45,7 +45,7 @@ namespace ProductionPresentationLayer.Controllers
         {
             // Extract registration data from the HTTP request
             string name = request.Name;
-            string lastName = request.lastName;
+            string lastName = request.LastName;
             string email = request.Email;
             string password = request.Password;
 
