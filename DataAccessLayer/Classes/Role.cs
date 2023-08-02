@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProductionDataAccessLayer.Classes
 {
-    internal class Role
+    public class Role
     {
         /// <summary>
         /// Role's identificator

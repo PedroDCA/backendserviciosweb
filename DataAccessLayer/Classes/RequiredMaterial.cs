@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProductionDataAccessLayer.Classes
 {
-    internal class RequiredMaterial
+    public class RequiredMaterial
     {
         /// <summary>
         /// Required material's id

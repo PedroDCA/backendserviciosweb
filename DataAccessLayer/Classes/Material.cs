@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProductionDataAccessLayer.Classes
 {
-    internal class Material
+    public class Material
     {
         /// <summary>
         /// Material's identificator

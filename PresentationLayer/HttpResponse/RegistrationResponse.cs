@@ -7,8 +7,8 @@
         /// </summary>
         public string Message { get; set; }
         /// <summary>
-        /// Integer that holds the new user's employee Id.
+        /// Integer that holds the Id.
         /// </summary>
-        public int EmployeeId { get; set; }
+        public int Id { get; set; }
     }
 }

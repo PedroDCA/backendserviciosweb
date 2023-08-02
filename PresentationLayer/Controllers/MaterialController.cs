@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProductionBusinessLayer.ServiceInterfaces;
-using ProductionBusinessLayer.Services;
 using ProductionDataAccessLayer.Classes;
+using ProductionDataAccessLayer.ServiceInterfaces;
 using ProductionPresentationLayer.HttpRequest;
 using ProductionPresentationLayer.HttpResponse;
 
@@ -9,46 +9,46 @@ namespace ProductionPresentationLayer.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class EmployeeController
+    public class MaterialController
     {
         //Contructor used to inject the IEmployeeService interface
-        private readonly IEmployeeService _employeeService;
+        private readonly IMaterialService _materialService;
 
-        public EmployeeController(IEmployeeService employeeService)
+        public MaterialController(IMaterialService materialService)
         {
-            _employeeService = employeeService;
+            _materialService = materialService;
         }
 
         // HTTP GET action to get all employees information
-        [HttpGet("GetAll")]
-        public List<Employee> GetAllEmployeesInformation()
+        [HttpGet("GetAllMaterial")]
+        public List<Material> GetAllMaterialsInformation()
         {
-            List<Employee> employeesInformation = _employeeService.GetAllEmployees();
+            List<Material> materialsInformation = _materialService.GetAllMaterials();
 
-            return employeesInformation;
+            return materialsInformation;
         }
 
         // HTTP POST action to add an employee
-        [HttpPost("AddEmployee")]
-        public RegistrationResponse HandleRegistrationRequest([FromBody] AddEmployeeRequest request)
+        [HttpPost("AddMaterial")]
+        public RegistrationResponse HandleRegistrationRequest([FromBody] AddMaterialRequest request)
         {
             // Extract registration data from the HTTP request
             string name = request.Name;
-            string lastName = request.LastName;
-            int roleId = request.RoleId ;
+            int quantity = request.Quantity;
 
             // Call the registration service to register the employee
-            var newEmployee = _employeeService.AddEmployee(name, lastName, roleId);
+            var newMaterial = _materialService.AddMaterial(name, quantity);
 
             // Generate an HTTP response indicating successful registration
             RegistrationResponse response = new RegistrationResponse
             {
-                Message = "Employee added successfully",
-                Id = newEmployee.Id,
+                Message = "Material added successfully",
+                Id = newMaterial.Id,
             };
 
             return response;
 
         }
+
     }
 }

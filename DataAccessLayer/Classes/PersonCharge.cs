@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProductionDataAccessLayer.Classes
 {
-    internal class PersonCharge
+    public class PersonCharge
     {
         /// <summary>
         /// References to the product process that will be done

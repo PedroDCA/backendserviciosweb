@@ -19,8 +19,6 @@ namespace ProductionBusinessLayer.ServiceInterfaces
         /// </summary>
         /// <param name="name">Employee's name</param>
         /// <param name="lastName">Employee's last name</param>
-        /// <param name="email">Employee's email</param>
-        /// <param name="password">Employee's password</param>
         /// <param name="roleId">Employee's Role: 1 is adminitrator, 2 is ebanista, 3 is painter, 4 is tapizador, 5 is designer</param>
         /// <returns></returns>
         Employee AddEmployee(string name, string lastName, int roleId);

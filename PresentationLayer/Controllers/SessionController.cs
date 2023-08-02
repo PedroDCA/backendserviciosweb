@@ -56,7 +56,7 @@ namespace ProductionPresentationLayer.Controllers
             RegistrationResponse response = new RegistrationResponse
             {
                 Message = "Registration successful",
-                EmployeeId = newEmployee.Id,
+                Id = newEmployee.Id,
             };
 
             return response;
