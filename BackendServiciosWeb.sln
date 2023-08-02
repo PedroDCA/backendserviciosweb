@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33712.159
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductionPresentationLayer", "PresentationLayer\ProductionPresentationLayer.csproj", "{859CCA31-57C6-4CEC-8ED2-0EDEB0E531FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductionPresentationLayer", "PresentationLayer\ProductionPresentationLayer.csproj", "{859CCA31-57C6-4CEC-8ED2-0EDEB0E531FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductionDataAccessLayer", "DataAccessLayer\ProductionDataAccessLayer.csproj", "{B23203B2-8BB0-4C84-BF7E-BBB6396FE757}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductionDataAccessLayer", "DataAccessLayer\ProductionDataAccessLayer.csproj", "{B23203B2-8BB0-4C84-BF7E-BBB6396FE757}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductionBusinessLayer", "BusinessLayer\ProductionBusinessLayer.csproj", "{849A1271-1EEA-481A-8FD6-20020D959593}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductionBusinessLayer", "BusinessLayer\ProductionBusinessLayer.csproj", "{849A1271-1EEA-481A-8FD6-20020D959593}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.DataAccess", "1.DataAccess", "{8025557A-DADF-4CFA-9EAA-A28DF7FE8BB9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Business", "2.Business", "{383C786B-C21E-44BC-8DB2-CD2EFF0D0BA5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Presentation", "3.Presentation", "{D1DAC293-4BF6-46CA-9B7C-D18FB85E74FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.Model", "0.Model", "{EDF8A189-9E3D-45C3-8AB8-93F529BCED23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

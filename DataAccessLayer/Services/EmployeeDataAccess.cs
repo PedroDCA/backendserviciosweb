@@ -11,7 +11,7 @@ namespace ProductionDataAccessLayer.Services
     /// <summary>
     /// Defines a class named EmployeeService that implements the IEmployeeService interface.
     /// </summary>
-    public class EmployeeService : IEmployeeService
+    public class EmployeeDataAccess : IEmployeeDataAccess
     {
         /// <summary>
         /// This method returns an instance of the Employee class
@@ -55,6 +55,44 @@ namespace ProductionDataAccessLayer.Services
             };
 
             return employee;
+        }
+
+        public List<Employee> GetAllEmployees()
+        {
+            var employee1 = new Employee()
+            {
+                //MISSING: Aqui va la conexion a la BD
+                Id = 1,
+                Name = "Nicole",
+                LastName = " ",
+                Email = " ",
+                Password = " ",
+                RoleId = 3,
+            };
+            var employee2 = new Employee()
+            {
+                //MISSING: Aqui va la conexion a la BD
+                Id = 1,
+                Name = "Steven",
+                LastName = " ",
+                Email = " ",
+                Password = " ",
+                RoleId = 2,
+            };
+            var employee3 = new Employee()
+            {
+                //MISSING: Aqui va la conexion a la BD
+                Id = 1,
+                Name = "Pedrooooooo",
+                LastName = " ",
+                Email = " ",
+                Password = " ",
+                RoleId = 4,
+            };
+            return new List<Employee>()
+            {
+                employee1, employee2, employee3
+            };
         }
     }
 }
