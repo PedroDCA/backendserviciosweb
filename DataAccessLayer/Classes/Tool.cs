@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProductionDataAccessLayer.Classes
 {
-    internal class Tool
+    public class Tool
     {
         /// <summary>
         /// Tool's identificator

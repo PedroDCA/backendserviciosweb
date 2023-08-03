@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProductionDataAccessLayer.Classes
 {
-    internal class Product
+    public class Product
     {
         /// <summary>
         /// Product's identificator

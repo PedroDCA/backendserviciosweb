@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ProductionDataAccessLayer.ServiceInterfaces
 {
     /// <summary>
-    /// Employee's Service Interface, that declares the method `GetEmployee`.  
+    /// Employee's Service Interface.  
     /// </summary>
     public interface IEmployeeDataAccess
     {
@@ -30,7 +30,10 @@ namespace ProductionDataAccessLayer.ServiceInterfaces
         /// <param name="roleId">Employee's Role: 1 is adminitrator, 2 is ebanista, 3 is painter, 4 is tapizador, 5 is designer</param>
         /// <returns></returns>
         Employee CreateEmployee(string name, string lastName, string email, string password, int roleId);
-
+        /// <summary>
+        /// Lists all the employees
+        /// </summary>
+        /// <returns></returns>
         List<Employee> GetAllEmployees();
     }
 }

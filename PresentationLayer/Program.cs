@@ -9,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IEmployeeDataAccess, EmployeeDataAccess>();
 builder.Services.AddScoped<ISessionService, SessionService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+builder.Services.AddScoped<IMaterialDataAccess, MaterialDataAccess>();
+builder.Services.AddScoped<IMaterialService, MaterialService>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

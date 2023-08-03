@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProductionDataAccessLayer.Classes
 {
-    internal class Process
+    public class Process
     {
         /// <summary>
         /// Process' identificator

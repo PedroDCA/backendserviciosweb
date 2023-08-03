@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProductionDataAccessLayer.Classes
 {
-    internal class Calendar
+    public class Calendar
     {
         /// <summary>
         /// Calendar's identificator
