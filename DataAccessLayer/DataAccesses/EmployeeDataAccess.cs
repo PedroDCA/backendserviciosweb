@@ -1,4 +1,5 @@
 ﻿using ProductionDataAccessLayer.Classes;
+using ProductionDataAccessLayer.DataAccesses;
 using ProductionDataAccessLayer.ServiceInterfaces;
 using System;
 using System.Collections.Generic;
@@ -9,10 +10,22 @@ using System.Threading.Tasks;
 namespace ProductionDataAccessLayer.Services
 {
     /// <summary>
-    /// Defines a class named EmployeeService that implements the IEmployeeService interface.
+    /// Defines a class named EmployeeDataAccess that implements the IEmployeeDataAccess interface.
     /// </summary>
     public class EmployeeDataAccess : IEmployeeDataAccess
     {
+
+        private readonly MySQLConnection _context;
+
+        /// <summary>
+        /// Constructor that accepts an instance of MySQLConnection (DbContext) injected by dependency injection
+        /// </summary>
+        /// <param name="context">MySQL connection context</param>
+        public EmployeeDataAccess(MySQLConnection context)
+        {
+            _context = context;
+        }
+
         /// <summary>
         /// This method returns an instance of the Employee class
         /// </summary>
@@ -21,14 +34,10 @@ namespace ProductionDataAccessLayer.Services
         /// <returns></returns>
         public Employee GetEmployee (string email, string password)
         {
-            var employee = new Employee()
-            {
-                //MISSING: Aqui va la conexion a la BD
-                Id = 1,
-                Email = "pedrito@gmail.com",
-                Password = "pedrito",
-            };
+            // Fetch the employee with the given email and password from the Employee DbSet in the database
+            Employee employee = _context.Employee.FirstOrDefault(e => e.Email == email && e.Password == password);
 
+            // If the employee with the given email and password is not found, return null or handle the error as needed
             return employee;
         }
 
@@ -45,54 +54,29 @@ namespace ProductionDataAccessLayer.Services
         {
             var employee = new Employee()
             {
-                //MISSING: Aqui va la conexion a la BD
                 Id = 1,
-                Name = " ",
-                LastName = " ",
-                Email = " ",
-                Password = " ",
+                Name = name,
+                LastName = lastName,
+                Email = email,
+                Password = password,
                 RoleId = 1,
             };
+
+            _context.Employee.Add(employee);
+            _context.SaveChanges();
 
             return employee;
         }
 
+        /// <summary>
+        /// Method that returns a list of all of the employees and their information
+        /// </summary>
+        /// <returns></returns>
         public List<Employee> GetAllEmployees()
         {
-            var employee1 = new Employee()
-            {
-                //MISSING: Aqui va la conexion a la BD
-                Id = 1,
-                Name = "Nicole",
-                LastName = " ",
-                Email = " ",
-                Password = " ",
-                RoleId = 3,
-            };
-            var employee2 = new Employee()
-            {
-                //MISSING: Aqui va la conexion a la BD
-                Id = 1,
-                Name = "Steven",
-                LastName = " ",
-                Email = " ",
-                Password = " ",
-                RoleId = 2,
-            };
-            var employee3 = new Employee()
-            {
-                //MISSING: Aqui va la conexion a la BD
-                Id = 1,
-                Name = "Pedrooooooo",
-                LastName = " ",
-                Email = " ",
-                Password = " ",
-                RoleId = 4,
-            };
-            return new List<Employee>()
-            {
-                employee1, employee2, employee3
-            };
+            List<Employee> result = _context.Employee.ToList();
+            return result;
         }
+           
     }
 }

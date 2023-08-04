@@ -19,6 +19,6 @@ namespace ProductionDataAccessLayer.Classes
         /// <summary>
         /// Date in which the product will be created
         /// </summary>
-        public DateOnly StartDate { get; set;}
+        public DateTime StartDate { get; set;}
     }
 }

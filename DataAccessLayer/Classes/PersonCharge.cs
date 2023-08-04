@@ -9,6 +9,10 @@ namespace ProductionDataAccessLayer.Classes
     public class PersonCharge
     {
         /// <summary>
+        /// PersonCharge's identificator
+        /// </summary>
+        public int Id { get; set; }
+        /// <summary>
         /// References to the product process that will be done
         /// </summary>
         public int ProductProcessId { get; set; }
