@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProductionDataAccessLayer.ServiceInterfaces
+namespace ProductionDataAccessLayer.DataAccessInterfaces
 {
     /// <summary>
     /// Employee's Service Interface.  
@@ -35,5 +35,14 @@ namespace ProductionDataAccessLayer.ServiceInterfaces
         /// </summary>
         /// <returns></returns>
         List<Employee> GetAllEmployees();
+
+
+        /// /// <summary>
+        /// Method to set a person in charge of a specidic product process. 
+        /// </summary>
+        /// <param name="productProcessId">References to the product process that will be done</param>
+        /// <param name="employeeId">References the employee's id in charge of this process</param>
+        /// <param name="calendarId">References to the date in which this will take place</param>
+        public PersonCharge SetPersonCharge(int productProcessId, int employeeId, int calendarId);
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProductionDataAccessLayer.Classes
 {
-    public class ProductProcess
+    public class ProductProcessData
     {
         /// <summary>
         /// Identificator of the process for a product
@@ -14,23 +14,18 @@ namespace ProductionDataAccessLayer.Classes
         public int Id { get; set; }
 
         /// <summary>
-        /// References to the product identificator that will be created
+        /// Product's name
         /// </summary>
-        public int ProductIdToCreate { get; set; }
-
-        /// <summary>
-        /// References the process' identificator that will be done
-        /// </summary>
-        public int ProcessId { get; set; }
-
-        /// <summary>
-        /// References the process step that will take place
-        /// </summary>
-        public int ProductionStep { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Amount of time in minutes that will take for the process to be finished.
         /// </summary>
         public int MinutesRequired { get; set; }
+
+        public Role Role { get; set; }
+
+        public List<Material> Materials { get; set; }
     }
+
 }

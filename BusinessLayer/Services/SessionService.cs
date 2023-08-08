@@ -1,12 +1,6 @@
 ﻿using ProductionBusinessLayer.ServiceInterfaces;
 using ProductionDataAccessLayer.Classes;
-using ProductionDataAccessLayer.ServiceInterfaces;
-using ProductionDataAccessLayer.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ProductionDataAccessLayer.DataAccessInterfaces;
 
 namespace ProductionBusinessLayer.Services
 {

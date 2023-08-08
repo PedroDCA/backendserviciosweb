@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using ProductionDataAccessLayer.DataAccesses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProductionDataAccessLayer.Classes
 {
-    public class Process
+    public class ProcessData
     {
         /// <summary>
         /// Process' identificator
@@ -19,13 +21,16 @@ namespace ProductionDataAccessLayer.Classes
         public string Name { get; set; }
 
         /// <summary>
-        /// Tool's id used for the process
+        /// New class of Tool called Tool
         /// </summary>
-        public int ToolId { get; set; }
+        public Tool Tool { get; set; }
 
         /// <summary>
-        /// Role of the person needed to do the process
+        /// New class of Role called Role
         /// </summary>
-        public int RoleId { get; set; }
+
+        public Role Role { get; set; }
+
+
     }
 }
