@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProductionDataAccessLayer.Classes
+﻿namespace ProductionPresentationLayer.HttpRequest
 {
-    public class Process
+    /// <summary>
+    /// Class that saves the information to request a process registration.
+    /// </summary>
+    public class AddProcessRequest
     {
-        /// <summary>
-        /// Process' identificator
-        /// </summary>
-        public int Id { get; set; }
-
         /// <summary>
         /// Process' name
         /// </summary>

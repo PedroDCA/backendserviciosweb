@@ -1,4 +1,5 @@
-﻿using ProductionBusinessLayer.ServiceInterfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using ProductionBusinessLayer.ServiceInterfaces;
 using ProductionDataAccessLayer.Classes;
 using ProductionDataAccessLayer.ServiceInterfaces;
 using System;
@@ -20,6 +21,7 @@ namespace ProductionBusinessLayer.Services
         {
             _materialDataAccess = materialDataAccess;
         }
+
         public List<Material> GetAllMaterials()
         {
             var materialList = _materialDataAccess.GetAllMaterials();
@@ -29,6 +31,12 @@ namespace ProductionBusinessLayer.Services
         public Material AddMaterial(string name, int quantity)
         {
             var material = _materialDataAccess.CreateMaterial(name, quantity);
+            return material;
+        }
+
+        public Material EditMaterialQuantity(int materialId, int newQuantity)
+        {
+            var material = _materialDataAccess.EditMaterialQuantity(materialId, newQuantity);
             return material;
         }
     }

@@ -20,7 +20,7 @@ namespace ProductionPresentationLayer.Controllers
         }
 
         // HTTP GET action to get all employees information
-        [HttpGet("GetAll")]
+        [HttpGet("GetAllEmployes")]
         public List<Employee> GetAllEmployeesInformation()
         {
             List<Employee> employeesInformation = _employeeService.GetAllEmployees();

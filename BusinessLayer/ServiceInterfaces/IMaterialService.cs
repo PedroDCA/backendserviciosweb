@@ -18,9 +18,17 @@ namespace ProductionBusinessLayer.ServiceInterfaces
         /// <summary>
         /// Method declaration for adding a new Material with quantity
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="quantity"></param>
+        /// <param name="name">Material's name</param>
+        /// <param name="quantity">Material's quantity</param>
         /// <returns></returns>
         Material AddMaterial(string name, int quantity);
+
+        /// <summary>
+        /// Method for editting a specific material quantity
+        /// </summary>
+        /// <param name="materialId">Material's identification</param>
+        /// <param name="newQuantity">Material's new  quantity</param>
+        /// <returns></returns>
+        public Material EditMaterialQuantity(int materialId, int newQuantity);
     }
 }
