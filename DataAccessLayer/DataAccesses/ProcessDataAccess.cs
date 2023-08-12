@@ -25,10 +25,7 @@ namespace ProductionDataAccessLayer.DataAccesses
             _context = context;
         }
 
-        /// <summary>
-        /// This method returns a list of all the processes in record with their information
-        /// </summary>
-        /// <returns></returns>
+        /// <inheritdoc />
         public List<ProcessData> GetAllProcesses()
         {
             var query =
@@ -55,13 +52,7 @@ namespace ProductionDataAccessLayer.DataAccesses
             return query.ToList();
         }
 
-        /// <summary>
-        /// This method creates a new Process record with given values and returns it.
-        /// </summary>
-        /// <param name="name">Process' name</param>
-        /// <param name="toolId">Tool's id used for the process</param>
-        /// <param name="roleId">Role of the person needed to do the process</param>
-        /// <returns></returns>
+        /// <inheritdoc />
         public Process CreateProcess(string name, int toolId, int roleId)
         {
             var process = new Process()

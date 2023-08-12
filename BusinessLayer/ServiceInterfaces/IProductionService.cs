@@ -11,9 +11,20 @@ namespace ProductionBusinessLayer.ServiceInterfaces
 {
     public interface IProductionService
     {
-        public bool CreateProduction(int productId, DateTime startDate, List<ProductionProcess> productionProcesses);
-
+        /// <summary>
+        /// Retrieves the production planning information for a given product ID.
+        /// </summary>
+        /// <param name="productId">The ID of the product for which to retrieve production planning.</param>
         public ProductionPlanning GetProductionPlanningByProductId(int productId);
+
+
+        /// <summary>
+        /// Creates a new production process for a product starting at the specified date,
+        /// </summary>
+        /// <param name="productId">The ID of the product for which to create a production process.</param>
+        /// <param name="startDate">The start date of the production process.</param>
+        /// <param name="productionProcesses">The list of production processes with assigned employees.</param>
+        public bool CreateProduction(int productId, DateTime startDate, List<ProductionProcess> productionProcesses);
 
     }
 }

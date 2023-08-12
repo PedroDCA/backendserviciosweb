@@ -14,6 +14,7 @@ namespace ProductionBusinessLayer.ServiceInterfaces
         /// </summary>
         /// <returns></returns>
         List<Employee> GetAllEmployees();
+
         /// <summary>
         /// Method declaration for adding a new Employee with specified details and role.
         /// </summary>

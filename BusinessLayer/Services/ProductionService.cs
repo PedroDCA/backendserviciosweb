@@ -2,11 +2,6 @@
 using ProductionBusinessLayer.ServiceInterfaces;
 using ProductionDataAccessLayer.Classes;
 using ProductionDataAccessLayer.DataAccessInterfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProductionBusinessLayer.Services
 {
@@ -16,6 +11,11 @@ namespace ProductionBusinessLayer.Services
         private IEmployeeDataAccess _employeeDataAccess;
         private ICalendarDataAccess _calendarDataAccess;
 
+        /// <summary>
+        /// Constructor for the ProductionService class that initializes the instance with three objects
+        /// Implements: IEmployeeDataAccess, ICalendarDataAccess, and IProductProcessDataAccess.
+        /// Enabled the service to access employee data, calendar data, and product process data.
+        /// </summary>
         public ProductionService(IEmployeeDataAccess employeeDataAccess, ICalendarDataAccess calendarDataAccess, IProductProcessDataAccess productProcessDataAccess)
         {
             _employeeDataAccess = employeeDataAccess;
@@ -23,12 +23,14 @@ namespace ProductionBusinessLayer.Services
             _productProcessDataAccess = productProcessDataAccess;
         }
 
+        /// <inheritdoc />
         public ProductionPlanning GetProductionPlanningByProductId(int productId)
         {
             var productionPlanning = _productProcessDataAccess.GetProductionPlanningByProductId(productId);
             return productionPlanning;
         }
 
+        /// <inheritdoc />
         public bool CreateProduction(int productId, DateTime startDate, List<ProductionProcess> productionProcesses)
         {
             var newProduction = _calendarDataAccess.StartNewProduction(productId, startDate);

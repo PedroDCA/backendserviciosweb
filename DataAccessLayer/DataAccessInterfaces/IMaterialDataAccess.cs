@@ -33,6 +33,11 @@ namespace ProductionDataAccessLayer.ServiceInterfaces
         /// <returns></returns>
         public Material EditMaterialQuantity(int materialId, int newQuantity);
 
+        /// <summary>
+        /// This method gets every material that is required for an specific product process
+        /// </summary>
+        /// <param name="productProcessId">The Identificator of a product process</param>
+        /// <returns></returns>
         public List<Material> GetMaterialsRequiredByProductProcessId(int productProcessId);
     }
 }

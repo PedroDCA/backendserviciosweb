@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace ProductionDataAccessLayer.DataAccesses
 {
+    /// <summary>
+    /// Defines a class named CalendarDataAccess that implements the ICalendarDataAccess interface.
+    /// </summary>
     public class CalendarDataAccess : ICalendarDataAccess
     {
         private readonly MySQLConnection _context;

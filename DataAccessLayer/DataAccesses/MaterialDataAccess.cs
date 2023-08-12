@@ -24,10 +24,7 @@ namespace ProductionDataAccessLayer.DataAccesses
             _context = context;
         }
 
-        /// <summary>
-        /// This method returns a list of all the materials in record with their information
-        /// </summary>
-        /// <returns></returns>
+        /// <inheritdoc />
         public List<Material> GetAllMaterials()
         {
             List<Material> result = _context.Material.ToList();
@@ -35,12 +32,7 @@ namespace ProductionDataAccessLayer.DataAccesses
         }
 
 
-        /// <summary>
-        /// This method creates a new Material record with given values and returns it. 
-        /// </summary>
-        /// <param name="name">Material's name</param>
-        /// <param name="quantity">Material's quantity</param>
-        /// <returns></returns>
+        /// <inheritdoc />
         public Material CreateMaterial(string name, int quantity)
         {
             var material = new Material()
@@ -55,12 +47,7 @@ namespace ProductionDataAccessLayer.DataAccesses
             return material;
         }
 
-        /// <summary>
-        /// This method edits the quantity of an existing material
-        /// </summary>
-        /// <param name="materialId">Material's id</param>
-        /// <param name="newQuantity">Material's quantity</param>
-        /// <returns></returns>
+        /// <inheritdoc />
         public Material EditMaterialQuantity(int materialId, int newQuantity)
         {
             // Retrieve the material from the database using the provided materialId
@@ -81,6 +68,7 @@ namespace ProductionDataAccessLayer.DataAccesses
             return material;
         }
 
+        /// <inheritdoc />
         public List<Material> GetMaterialsRequiredByProductProcessId(int productProcessId)
         {
             var query =

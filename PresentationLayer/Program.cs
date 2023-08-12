@@ -23,7 +23,6 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IToolDataAccess, ToolDataAccess>();
 builder.Services.AddScoped<IToolService, ToolService>();
 builder.Services.AddScoped<IProductProcessDataAccess, ProductProcessDataAccess>();
-builder.Services.AddScoped<IProductProcessService, ProductProcessService>();
 builder.Services.AddScoped<ICalendarDataAccess, CalendarDataAccess>();
 builder.Services.AddScoped<IProductionService, ProductionService>();
 

@@ -10,7 +10,7 @@ namespace ProductionDataAccessLayer.DataAccessInterfaces
     public interface IProductDataAccess
     {
         /// <summary>
-        /// Method to get all the product in the database
+        /// Method to get all the products in the database
         /// </summary>
         /// <returns></returns>
         public List<Product> GetAllProducts();

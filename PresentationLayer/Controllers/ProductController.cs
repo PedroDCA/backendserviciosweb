@@ -10,7 +10,7 @@ namespace ProductionPresentationLayer.Controllers
     [Route("[controller]")]
     public class ProductController
     {
-        //Contructor used to inject the IMaterialService interface
+        //Contructor used to inject the IProductService interface
         private readonly IProductService _productService;
 
         public ProductController(IProductService productService)
@@ -27,7 +27,7 @@ namespace ProductionPresentationLayer.Controllers
             return productsInformation;
         }
 
-        // HTTP POST action to add a material
+        // HTTP POST action to add a product
         [HttpPost("AddProduct")]
         public RegistrationResponse HandleRegistrationRequest([FromBody] AddProductRequest request)
         {
