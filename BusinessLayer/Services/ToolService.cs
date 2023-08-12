@@ -15,21 +15,22 @@ namespace ProductionBusinessLayer.Services
     {
         private IToolDataAccess _toolDataAccess;
 
-
         /// <summary>
-        /// Constructor that initializes a new instance of the `ToolService` class, it allows the `ToolService` class to interact with the `ToolService` object.
+        /// Constructor for the ToolService class that initializes the instance with an object, implementing the IToolDataAccess interface, allowing access to Tool data.
         /// </summary>
         public ToolService(IToolDataAccess toolDataAccess)
         {
             _toolDataAccess = toolDataAccess;
         }
 
+        /// <inheritdoc />
         public List<Tool> GetAllTools()
         {
             var toollList = _toolDataAccess.GetAllTools();
             return toollList;
         }
 
+        /// <inheritdoc />
         public Tool AddTool(string name, int quantity)
         {
             var tool = _toolDataAccess.CreateTool(name, quantity);

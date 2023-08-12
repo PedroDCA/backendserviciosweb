@@ -2,7 +2,6 @@
 using ProductionBusinessLayer.ServiceInterfaces;
 using ProductionDataAccessLayer.Classes;
 using ProductionPresentationLayer.HttpRequest;
-using ProductionPresentationLayer.HttpResponse;
 
 namespace ProductionPresentationLayer.Controllers
 {
@@ -10,7 +9,7 @@ namespace ProductionPresentationLayer.Controllers
     [Route("[controller]")]
     public class ProductionController
     {
-        //Contructor used to inject the IProcessService interface
+        //Contructor used to inject the IProductionService interface
         private readonly IProductionService _productionService;
 
         public ProductionController(IProductionService productionService)
@@ -27,6 +26,8 @@ namespace ProductionPresentationLayer.Controllers
 
             return wasProductionCreated;
         }
+
+        // HTTP GET action to get a planning of a product by Id
         [HttpGet("GetPlanning")]
 
         public ProductionPlanning HandleGetPlanningRequest(int productId)

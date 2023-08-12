@@ -24,23 +24,14 @@ namespace ProductionDataAccessLayer.DataAccesses
             _context = context;
         }
 
-        /// <summary>
-        /// This method returns a list of all the Tools in record with their information
-        /// </summary>
-        /// <returns></returns>
+        /// <inheritdoc />
         public List<Tool> GetAllTools()
         {
             List<Tool> result = _context.Tool.ToList();
             return result;
         }
 
-
-        /// <summary>
-        /// This method creates a new Tool record with given values and returns it. 
-        /// </summary>
-        /// <param name="name">Tool's name</param>
-        /// <param name="quantity">Tool's quantity</param>
-        /// <returns></returns>
+        /// <inheritdoc />
         public Tool CreateTool(string name, int quantity)
         {
             var tool = new Tool()

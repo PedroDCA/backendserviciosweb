@@ -15,25 +15,28 @@ namespace ProductionBusinessLayer.Services
         private IMaterialDataAccess _materialDataAccess;
 
         /// <summary>
-        /// Constructor that initializes a new instance of the `MaterialService` class, it allows the `MaterialService` class to interact with the `materialService` object.
+        /// Constructor for the MaterialService class that initializes the instance with an object, implementing the IMaterialDataAccess interface, allowing access to the material data.
         /// </summary>
         public MaterialService(IMaterialDataAccess materialDataAccess)
         {
             _materialDataAccess = materialDataAccess;
         }
 
+        /// <inheritdoc />
         public List<Material> GetAllMaterials()
         {
             var materialList = _materialDataAccess.GetAllMaterials();
             return materialList;
         }
 
+        /// <inheritdoc />
         public Material AddMaterial(string name, int quantity)
         {
             var material = _materialDataAccess.CreateMaterial(name, quantity);
             return material;
         }
 
+        /// <inheritdoc />
         public Material EditMaterialQuantity(int materialId, int newQuantity)
         {
             var material = _materialDataAccess.EditMaterialQuantity(materialId, newQuantity);

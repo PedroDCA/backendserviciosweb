@@ -24,10 +24,7 @@ namespace ProductionDataAccessLayer.DataAccesses
             _context = context;
         }
 
-        /// <summary>
-        /// Method to get all the product in the database
-        /// </summary>
-        /// <returns></returns>
+        /// <inheritdoc />
         public List<Product> GetAllProducts()
         {
             List<Product> result = _context.Product.ToList();
@@ -35,11 +32,7 @@ namespace ProductionDataAccessLayer.DataAccesses
         }
 
 
-        /// <summary>
-        /// Method that adds a product in the database
-        /// </summary>
-        /// <param name="name">Product's name</param>
-        /// <returns></returns>
+        /// <inheritdoc />
         public Product CreateProduct(string name)
         {
             var product = new Product()

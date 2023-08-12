@@ -24,7 +24,7 @@ namespace ProductionBusinessLayer.ServiceInterfaces
         Material AddMaterial(string name, int quantity);
 
         /// <summary>
-        /// Method for editting a specific material quantity
+        /// Method to edit the quantity for a specific material
         /// </summary>
         /// <param name="materialId">Material's identification</param>
         /// <param name="newQuantity">Material's new  quantity</param>
