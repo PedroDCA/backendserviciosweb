@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProductionBusinessLayer.ServiceInterfaces;
 using ProductionDataAccessLayer.Classes;
-using ProductionDataAccessLayer.ServiceInterfaces;
+using ProductionDataAccessLayer.DataAccessInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -26,5 +26,10 @@ namespace ProductionBusinessLayer.ServiceInterfaces
         /// <param name="productionProcesses">The list of production processes with assigned employees.</param>
         public bool CreateProduction(int productId, DateTime startDate, List<ProductionProcess> productionProcesses);
 
+        /// <summary>
+        /// Gets the information about all the productions.
+        /// </summary>
+        /// <returns>The list with all the productions.</returns>
+        public List<CalendarData> GetAllProductions();
     }
 }

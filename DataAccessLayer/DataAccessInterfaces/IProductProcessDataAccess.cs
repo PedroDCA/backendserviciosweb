@@ -32,5 +32,12 @@ namespace ProductionDataAccessLayer.DataAccessInterfaces
         /// <param name="minutesRequired">Amount of time in minutes that will take for the process to be finished.</param>
         /// <returns></returns>
         public ProductProcess CreateProductProcess(int productId, int processId, int productionStep, int minutesRequired);
+
+        /// <summary>
+        /// Gets the required minutos for a production of a product by its product id.
+        /// </summary>
+        /// <param name="productId">The product identifier.</param>
+        /// <returns>The sum of the required minutes of all processes.</returns>
+        public int GetRequiredMinutesForProductId(int productId);
     }
 }
