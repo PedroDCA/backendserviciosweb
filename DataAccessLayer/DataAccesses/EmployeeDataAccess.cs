@@ -39,7 +39,7 @@ namespace ProductionDataAccessLayer.DataAccesses
                 LastName = lastName,
                 Email = email,
                 Password = password,
-                RoleId = 1,
+                RoleId = roleId,
             };
 
             _context.Employee.Add(employee);
