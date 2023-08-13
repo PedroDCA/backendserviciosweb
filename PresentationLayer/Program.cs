@@ -3,7 +3,6 @@ using ProductionBusinessLayer.ServiceInterfaces;
 using ProductionBusinessLayer.Services;
 using ProductionDataAccessLayer.DataAccesses;
 using ProductionDataAccessLayer.DataAccessInterfaces;
-using ProductionDataAccessLayer.ServiceInterfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 

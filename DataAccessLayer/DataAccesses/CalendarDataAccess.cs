@@ -26,18 +26,35 @@ namespace ProductionDataAccessLayer.DataAccesses
         }
 
         /// <inheritdoc />
-        public Calendar StartNewProduction(int productIdToCreate, DateTime startDate)
+        public Calendar StartNewProduction(int productIdToCreate, DateTime startDate, DateTime endDate)
         {
             var calendar = new Calendar()
             {
                 ProductIdToCreate = productIdToCreate,
-                StartDate = startDate
+                StartDate = startDate,
+                EndDate = endDate,
             };
 
             _context.Calendar.Add(calendar);
             _context.SaveChanges();
 
             return calendar;
+        }
+
+        /// <inheritdoc />
+        public List<CalendarData> GetAllCalendarInformation()
+        {
+            var query =
+                from c in _context.Calendar
+                join p in _context.Product on c.ProductIdToCreate equals p.Id
+                select new CalendarData
+                {
+                    ProductName = p.Name,
+                    EndDate = c.EndDate,
+                    StartDate = c.StartDate,
+                };
+
+            return query.ToList();
         }
     }
 }

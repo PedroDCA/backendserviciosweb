@@ -20,5 +20,10 @@ namespace ProductionDataAccessLayer.Classes
         /// Date in which the product will be created
         /// </summary>
         public DateTime StartDate { get; set;}
+
+        /// <summary>
+        /// Date in which the product will be ended.
+        /// </summary>
+        public DateTime EndDate { get; set;}
     }
 }

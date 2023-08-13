@@ -19,7 +19,6 @@ namespace ProductionPresentationLayer.Controllers
 
         // HTTP POST action to add a production process
         [HttpPost("StartProduction")]
-
         public bool HandleCreateProductionRequest([FromBody] CreateProductionRequest request)
         {
             var wasProductionCreated = _productionService.CreateProduction(request.ProductId, request.StartDate, request.ProductionProcesses);
@@ -29,10 +28,18 @@ namespace ProductionPresentationLayer.Controllers
 
         // HTTP GET action to get a planning of a product by Id
         [HttpGet("GetPlanning")]
-
         public ProductionPlanning HandleGetPlanningRequest(int productId)
         {
             var productionPlanning = _productionService.GetProductionPlanningByProductId(productId);
+
+            return productionPlanning;
+        }
+
+        // HTTP GET action to get a planning of a product by Id
+        [HttpGet("GetAllProductions")]
+        public List<CalendarData> HandleGetAllProductionsRequest()
+        {
+            var productionPlanning = _productionService.GetAllProductions();
 
             return productionPlanning;
         }

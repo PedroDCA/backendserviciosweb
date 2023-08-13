@@ -9,5 +9,10 @@
         /// Products's name
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// The steps that are required for the product.
+        /// </summary>
+        public List<RequestedStepInformation> Steps { get; set; }
     }
 }

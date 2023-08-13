@@ -1,6 +1,5 @@
 ﻿using ProductionDataAccessLayer.Classes;
 using ProductionDataAccessLayer.DataAccessInterfaces;
-using ProductionDataAccessLayer.ServiceInterfaces;
 
 namespace ProductionDataAccessLayer.DataAccesses
 {
@@ -44,6 +43,15 @@ namespace ProductionDataAccessLayer.DataAccesses
         }
 
         /// <inheritdoc />
+        public int GetRequiredMinutesForProductId(int productId)
+        {
+            var minutesRequiredList = _context.ProductProcess.Where((productProcess) => productProcess.ProductIdToCreate == productId).Select((productProcess) => productProcess.MinutesRequired);
+            var totalMinutesRequired = minutesRequiredList.Aggregate((totalMinutesRequired, nextMinutesRequired) => totalMinutesRequired + nextMinutesRequired);
+
+            return totalMinutesRequired;
+        }
+
+        /// <inheritdoc />
         public List<ProductProcessData> GetProductionProcessesByProductId(int productId)
         {
             var query =
@@ -71,7 +79,7 @@ namespace ProductionDataAccessLayer.DataAccesses
 
             foreach ( var process in result ) 
             {
-                process.Materials = _materialDataAccess.GetMaterialsRequiredByProductProcessId(process.Id);
+                process.Materials = _materialDataAccess.GetMaterialsInformationByProductProcessId(process.Id);
             }
 
             return result;

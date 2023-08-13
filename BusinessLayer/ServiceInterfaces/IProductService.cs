@@ -1,4 +1,5 @@
 ﻿using ProductionDataAccessLayer.Classes;
+using ProductionPresentationLayer.HttpRequest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace ProductionBusinessLayer.ServiceInterfaces
         /// </summary>
         /// <param name="name">Product's name</param>
         /// <returns></returns>
-        public Product AddProduct(string name);
+        public Product AddProduct(string name, List<RequestedStepInformation> Steps);
 
     }
 }

@@ -1,7 +1,6 @@
 ﻿using ProductionBusinessLayer.ServiceInterfaces;
 using ProductionDataAccessLayer.Classes;
 using ProductionDataAccessLayer.DataAccessInterfaces;
-using ProductionDataAccessLayer.ServiceInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -12,10 +12,12 @@ namespace ProductionDataAccessLayer.Classes
         /// Material's identificator
         /// </summary>
         public int Id { get; set; }
+
         /// <summary>
         /// Material's name
         /// </summary>
         public string Name { get; set; }
+
         /// <summary>
         /// Material's quantity
         /// </summary>

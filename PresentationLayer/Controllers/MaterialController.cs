@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProductionBusinessLayer.ServiceInterfaces;
 using ProductionDataAccessLayer.Classes;
-using ProductionDataAccessLayer.ServiceInterfaces;
 using ProductionPresentationLayer.HttpRequest;
 using ProductionPresentationLayer.HttpResponse;
 

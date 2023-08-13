@@ -1,5 +1,5 @@
 ﻿using ProductionDataAccessLayer.Classes;
-using ProductionDataAccessLayer.ServiceInterfaces;
+using ProductionDataAccessLayer.DataAccessInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,7 +69,7 @@ namespace ProductionDataAccessLayer.DataAccesses
         }
 
         /// <inheritdoc />
-        public List<Material> GetMaterialsRequiredByProductProcessId(int productProcessId)
+        public List<Material> GetMaterialsInformationByProductProcessId(int productProcessId)
         {
             var query =
                 from rm in _context.RequiredMaterial
@@ -87,5 +87,33 @@ namespace ProductionDataAccessLayer.DataAccesses
 
         }
 
+        /// <inheritdoc />
+        public RequiredMaterial CreateRequiredMaterialForProcess(int productProcessId, int materialId, int quantity)
+        {
+            var newRequiredMaterial = new RequiredMaterial
+            {
+                ProductProcessId = productProcessId,
+                MaterialId = materialId,
+                Quantity = quantity,
+            };
+
+            return newRequiredMaterial;
+        }
+
+        /// <inheritdoc />
+        public Material GetMaterialById(int materialId)
+        {
+            var material = _context.Material.FirstOrDefault(material => material.Id == materialId) ?? new Material();
+
+            return material;
+        }
+
+        /// <inheritdoc />
+        public List<RequiredMaterial> GetRequiredMaterialsByProductProcessId(int productProcessId)
+        {
+            var requiredMaterialList = _context.RequiredMaterial.Where((requiredMaterial) => requiredMaterial.ProductProcessId == productProcessId);
+
+            return requiredMaterialList.ToList();
+        }
     }
 }

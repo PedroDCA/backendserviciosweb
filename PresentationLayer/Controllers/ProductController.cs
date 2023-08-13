@@ -35,7 +35,7 @@ namespace ProductionPresentationLayer.Controllers
             string name = request.Name;
 
             // Call the registration service to register the material
-            var newProduct = _productService.AddProduct(name);
+            var newProduct = _productService.AddProduct(name, request.Steps);
 
             // Generate an HTTP response indicating successful registration
             RegistrationResponse response = new RegistrationResponse
