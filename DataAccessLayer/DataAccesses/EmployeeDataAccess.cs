@@ -35,7 +35,6 @@ namespace ProductionDataAccessLayer.DataAccesses
         {
             var employee = new Employee()
             {
-                Id = 1,
                 Name = name,
                 LastName = lastName,
                 Email = email,
