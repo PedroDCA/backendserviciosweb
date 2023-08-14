@@ -20,9 +20,9 @@ namespace ProductionPresentationLayer.Controllers
 
         // HTTP GET action to get all processes information
         [HttpGet("GetAllProcesses")]
-        public List<ProcessData> GetAllProcessesInformation()
+        public List<Process> GetAllProcessesInformation()
         {
-            List<ProcessData> processesInformation = _processService.GetAllProcesses();
+            List<Process> processesInformation = _processService.GetAllBaseInformationProcesses();
 
             return processesInformation;
         }
