@@ -59,8 +59,6 @@ namespace ProductionDataAccessLayer.DataAccesses
                 join prd in _context.Product on pp.ProductIdToCreate equals prd.Id
                 join p in _context.Process on pp.ProcessId equals p.Id
                 join r in _context.Role on p.RoleId equals r.Id
-                join rm in _context.RequiredMaterial on pp.Id equals rm.ProductProcessId
-                join m in _context.Material on rm.MaterialId equals m.Id
                 where pp.ProductIdToCreate == productId
                 orderby pp.ProductionStep
                 select new ProductProcessData

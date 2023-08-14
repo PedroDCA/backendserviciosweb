@@ -97,6 +97,9 @@ namespace ProductionDataAccessLayer.DataAccesses
                 Quantity = quantity,
             };
 
+            _context.RequiredMaterial.Add(newRequiredMaterial);
+            _context.SaveChanges();
+
             return newRequiredMaterial;
         }
 
