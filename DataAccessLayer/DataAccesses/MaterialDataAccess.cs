@@ -78,7 +78,7 @@ namespace ProductionDataAccessLayer.DataAccesses
                 where pp.Id == productProcessId
                 select new Material
                 {
-                    Id = rm.Id,
+                    Id = m.Id,
                     Name = m.Name,
                     Quantity = rm.Quantity
                 };
