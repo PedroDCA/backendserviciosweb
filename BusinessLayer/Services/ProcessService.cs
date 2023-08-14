@@ -21,9 +21,9 @@ namespace ProductionBusinessLayer.Services
         }
 
         /// <inheritdoc />
-        public List<ProcessData> GetAllProcesses()
+        public List<Process> GetAllBaseInformationProcesses()
         {
-            var processlList = _processDataAccess.GetAllProcesses();
+            var processlList = _processDataAccess.GetAllBaseInformationProcesses();
             return processlList;
         }
 

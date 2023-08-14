@@ -22,6 +22,6 @@ namespace ProductionDataAccessLayer.DataAccessInterfaces
         /// Lists all the Processes in record and their information
         /// </summary>
         /// <returns></returns>
-        List<ProcessData> GetAllProcesses();
+        List<Process> GetAllBaseInformationProcesses();
     }
 }

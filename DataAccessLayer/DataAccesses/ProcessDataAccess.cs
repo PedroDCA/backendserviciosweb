@@ -26,30 +26,9 @@ namespace ProductionDataAccessLayer.DataAccesses
         }
 
         /// <inheritdoc />
-        public List<ProcessData> GetAllProcesses()
+        public List<Process> GetAllBaseInformationProcesses()
         {
-            var query =
-                from p in _context.Process
-                join t in _context.Tool on p.ToolId equals t.Id
-                join r in _context.Role on p.RoleId equals r.Id
-                select new ProcessData
-                {
-                    Name = p.Name,
-                    Tool = new Tool
-                    {
-                        Id = p.ToolId,
-                        Name = t.Name
-                    },
-
-                    Role = new Role
-                    {
-
-                        Id = p.RoleId,
-                        Name = r.Name
-                    }
-                };
-
-            return query.ToList();
+            return _context.Process.ToList();
         }
 
         /// <inheritdoc />

@@ -13,7 +13,7 @@ namespace ProductionBusinessLayer.ServiceInterfaces
         /// Method that returns a list of all the Processes
         /// </summary>
         /// <returns></returns>
-        public List<ProcessData> GetAllProcesses();
+        public List<Process> GetAllBaseInformationProcesses();
 
         /// <summary>
         /// Method declaration for adding a new Process with quantity
