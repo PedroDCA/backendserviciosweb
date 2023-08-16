@@ -45,7 +45,7 @@ namespace ProductionDataAccessLayer.DataAccesses
         /// <inheritdoc />
         public int GetRequiredMinutesForProductId(int productId)
         {
-            var minutesRequiredList = _context.ProductProcess.Where((productProcess) => productProcess.ProductIdToCreate == productId).Select((productProcess) => productProcess.MinutesRequired);
+            var minutesRequiredList = _context.ProductProcess.Where((productProcess) => productProcess.ProductIdToCreate == productId).Select((productProcess) => productProcess.MinutesRequired).ToList();
             var totalMinutesRequired = minutesRequiredList.Aggregate((totalMinutesRequired, nextMinutesRequired) => totalMinutesRequired + nextMinutesRequired);
 
             return totalMinutesRequired;

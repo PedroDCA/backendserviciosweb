@@ -95,11 +95,30 @@ namespace ProductionBusinessLayer.Services
             return true;
         }
 
+        /// <summary>
+        /// Gets the production information with the formatting for the page.
+        /// </summary>
+        /// <param name="rawProductionInformation">The producion information in raw.</param>
+        /// <returns>The production information to be used.</returns>
+        private CalendarData GetProductionFormatted(CalendarData rawProductionInformation)
+        {
+            var formattedProduction = new CalendarData
+            {
+                ProductName = rawProductionInformation.ProductName,
+                StartDate = rawProductionInformation.StartDate.AddHours(8),
+                EndDate = rawProductionInformation.EndDate,
+            };
+
+            return formattedProduction;
+        }
+
         /// <inheritdoc />
         public List<CalendarData> GetAllProductions()
         {
             var allProductions = _calendarDataAccess.GetAllCalendarInformation();
-            return allProductions;
+
+            var formattedProductions = allProductions.Select(GetProductionFormatted).ToList();
+            return formattedProductions;
         }
     }
 }
